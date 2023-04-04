@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email sender</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <main class="column">
+    <h1>EMAIL SENDER</h1>
+
+    <form class="column">
+
+      <div class="row">
+
+        <div class="column">
+          <label class="column">
+            From:
+            <input type="text" id="sender-name" placeholder="Name" required>
+            <input type="email" id="sender-email" placeholder="Email" required>
+          </label>
+
+          <label class="column" id="recipients">
+            To:
+            <input type="email" placeholder="Recipient email" required>
+            <button type="button" class="btn" id="add-recipient">Add recipient</button>
+          </label>
+        </div>
+
+        <div class="column">
+          <label class="column">
+            Subject:
+            <input type="text" id="subject" placeholder="Subject">
+          </label>
+
+          <div class="row">
+            <label class="column">
+              Plain text:
+              <textarea id="msg-plain" cols="30" rows="10"></textarea>
+            </label>
+
+            <label class="column">
+              HTML:
+              <textarea id="msg-html" cols="30" rows="10"></textarea>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="btn send">SEND</button>
+    </form>
+  </main>
+</body>
+
+</html>
