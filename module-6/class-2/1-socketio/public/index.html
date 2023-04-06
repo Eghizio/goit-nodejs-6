@@ -1,0 +1,32 @@
+<title>Chat GoIT</title>
+
+<head>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>Chat GoIT</h1>
+
+    <a href="/" target="_blank">New client</a>
+
+    <div>Online: <span id="online">0</span></div>
+
+    <form id="name-form">
+      <div>Name: <span id="name-display">Guest</span></div>
+
+      <input type="text" id="name">
+      <button type="submit">Change name</button>
+    </form>
+
+    <ul class="chat" id="chat"></ul>
+
+    <form id="chat-form">
+      <input type="text" id="msg">
+      <button type="submit">Send</button>
+    </form>
+
+  </main>
+</body>

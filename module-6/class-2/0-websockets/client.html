@@ -1,0 +1,46 @@
+<title>WebSocket Client</title>
+
+<h1>Open the Console (F12)</h1>
+<a href="./client.html" target="_blank">Open another client</a>
+
+<form>
+  <input type="text" id="msg">
+  <button type="submit">Send</button>
+</form>
+
+<ul id="chat"></ul>
+
+<script>
+  const chatElement = document.querySelector("ul#chat");
+
+  const createChatMessage = (msg) => {
+    const li = document.createElement("li");
+    li.textContent = msg;
+    return li;
+  };
+
+
+  const ws = new WebSocket("ws://localhost:1337");
+
+  ws.onmessage = (event) => {
+    const msg = event.data;
+    console.log(msg);
+
+    const messageElement = createChatMessage(msg);
+    chatElement.appendChild(messageElement);
+  };
+</script>
+
+<script>
+  const msgInput = document.querySelector("input#msg");
+  document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const msg = msgInput.value.trim();
+    if (!msg) return;
+
+    ws.send(msg);
+
+    msgInput.value = "";
+  });
+</script>
